@@ -1,0 +1,25 @@
+class Bottle:
+    """A class that represents a bottle"""
+    """ In other languages the variables would go first but python has the variables in the method aka __init__(self)"""
+    def __init__(self): 
+        self.material = "steel"
+        
+        self.volume_capacity = 24
+        self.volume_unit = "ounces"
+    
+    def get_material(self):
+        return self.material
+
+    def get_volume(self):
+        """constructs string presenting the volume of the bottle with units"""
+        return str(self.volume_capacity) + " " + str(self.volume_unit)
+    
+    def set_volume(self, new_volume_capacity, new_volume_unit):
+        self.volume_capacity = new_volume_capacity
+        self.volume_unit = new_volume_unit
+    
+    def interactive_set_volume(self):
+    """Change a bottle's volume with the user's input"""
+    new_volume_unit = input("Please enter a unit of measure for our bottle: ")
+    new_volume_capacity = input("Please enter a capacity of that unit for our bottle: ")
+    self.set_volume(new_volume_capacity, new_volume_unit)
